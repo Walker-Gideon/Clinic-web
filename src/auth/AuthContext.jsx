@@ -4,8 +4,6 @@ const AuthContext = createContext();
 
 function AuthProvider({ children }) {
   const [selectedRole, setSelectedRole] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
@@ -14,10 +12,6 @@ function AuthProvider({ children }) {
     () => ({
       selectedRole,
       setSelectedRole,
-      email,
-      setEmail,
-      password,
-      setPassword,
       showPassword,
       setShowPassword,
       isLoading,
@@ -25,7 +19,7 @@ function AuthProvider({ children }) {
       error,
       setError,
     }),
-    [selectedRole, email, password, showPassword, isLoading, error],
+    [selectedRole, showPassword, isLoading, error],
   );
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
