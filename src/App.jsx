@@ -1,7 +1,13 @@
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import AuthLayout from "./auth/AuthLayout";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <AuthLayout />,
+  },
+]);
+
 export default function App() {
-  return (
-    <div>
-      <h1 class="p-2 text-3xl font-bold underline">Hello world!</h1>
-    </div>
-  );
+  return <RouterProvider router={router} />;
 }
