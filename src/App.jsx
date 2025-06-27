@@ -12,7 +12,9 @@ const router = createBrowserRouter([
 export default function App() {
   return (
     <AuthProvider>
-      <RouterProvider router={router} />;
+      <div className="bg-gradient-to-br from-blue-50 via-white to-green-50">
+        <RouterProvider router={router} />;
+      </div>
     </AuthProvider>
   );
 }

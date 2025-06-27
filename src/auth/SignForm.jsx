@@ -41,7 +41,7 @@ export default function SignForm() {
   return (
     <Card styling="border-gray-300 bg-white px-5 medium:py-6 py-5">
       <CardHeader>
-        <CardTitle styling="medium:text-4xl text-2xl">Sign In</CardTitle>
+        <CardTitle styling="middle:text-3xl  text-2xl">Sign In</CardTitle>
         <CardDescription>
           Enter your credentials to access the system
         </CardDescription>
