@@ -1,5 +1,7 @@
 import { Form } from "react-router-dom";
 import { useAuth } from "./AuthContext";
+import { LuEye } from "react-icons/lu";
+import { LuEyeOff } from "react-icons/lu";
 
 export default function SignForm() {
   const {
