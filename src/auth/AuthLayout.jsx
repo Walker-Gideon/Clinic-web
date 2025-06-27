@@ -7,7 +7,7 @@ import Notice from "./Notice";
 export default function AuthLayout() {
   return (
     <div className="flex min-h-screen items-center justify-center bg-gradient-to-br from-blue-50 via-white to-green-50 p-4">
-      <div className="w-full max-w-md space-y-6">
+      <div className="medium:max-w-md medium:space-y-6 my-8 w-full max-w-xs space-y-8">
         <AuthHeader />
         <RoleSelection />
         <SignForm />
