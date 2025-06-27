@@ -2,6 +2,16 @@ import { Form } from "react-router-dom";
 import { useAuth } from "./AuthContext";
 import { LuEye } from "react-icons/lu";
 import { LuEyeOff } from "react-icons/lu";
+import Card from "../components/ui/card/Card";
+import CardHeader from "../components/ui/card/CardHeader";
+import CardTitle from "../components/ui/card/CardTitle";
+import CardDescription from "../components/ui/card/CardDescription";
+import CardContent from "../components/ui/card/CardContent";
+import Label from "../components/ui/label/Label";
+import Input from "../components/ui/input/Input";
+import Button from "../components/ui/button/Button";
+import Alert from "../components/ui/alert/Alert";
+import AlertDescription from "../components/ui/alert/AlertDescription";
 
 export default function SignForm() {
   const {
@@ -29,28 +39,29 @@ export default function SignForm() {
   };
 
   return (
-    <div>
-      <div>
-        <h1>Sign In</h1>
-        <p>Enter your credentials to access the system</p>
-      </div>
+    <Card className="border-gray-300 bg-white px-5 py-6">
+      <CardHeader>
+        <CardTitle className="text-4xl">Sign In</CardTitle>
+        <CardDescription>
+          Enter your credentials to access the system
+        </CardDescription>
+      </CardHeader>
 
-      <div>
-        <Form onSubmit={handleLogin} className="space-y-4">
-          <div className="space-y-2">
-            <label htmlFor="email">Email Address</label>
-            <input
+      <CardContent className="pt-6">
+        <Form onSubmit={handleLogin} className="space-y-6">
+          <div className="flex flex-col space-y-2">
+            <Label forLabel="email">Email Address</Label>
+            <Input
               id="email"
               type="email"
               placeholder="Enter your email"
               required
             />
           </div>
-
-          <div className="space-y-2">
-            <label htmlFor="password">Password</label>
+          <div className="flex flex-col space-y-2">
+            <Label forLabel="password">Password</Label>
             <div className="relative">
-              <input
+              <Input
                 id="password"
                 type={showPassword ? "text" : "password"}
                 placeholder="Enter your password"
@@ -62,32 +73,29 @@ export default function SignForm() {
                 className="absolute top-1/2 right-3 -translate-y-1/2 transform text-gray-500 hover:text-gray-700"
               >
                 {showPassword ? (
-                  <LuEyeOff className="h-4 w-4" />
+                  <LuEyeOff className="h-4 w-4 cursor-pointer" />
                 ) : (
-                  <LuEye className="h-4 w-4" />
+                  <LuEye className="h-4 w-4 cursor-pointer" />
                 )}
               </button>
             </div>
           </div>
 
           {error && (
-            <div variant="destructive">
-              <p>{error}</p>
-            </div>
-            // <Alert variant="destructive">
-            //   <AlertDescription>{error}</AlertDescription>
-            // </Alert>
+            <Alert variant="destructive">
+              <AlertDescription>{error}</AlertDescription>
+            </Alert>
           )}
 
-          <button
+          <Button
             type="submit"
-            className="w-full"
+            className="w-full rounded-sm bg-gray-950 py-1.5 text-white hover:bg-gray-900"
             disabled={isLoading || !selectedRole}
           >
             {isLoading ? "Signing In..." : "Sign In"}
-          </button>
+          </Button>
         </Form>
-      </div>
-    </div>
+      </CardContent>
+    </Card>
   );
 }

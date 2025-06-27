@@ -47,7 +47,7 @@ export default function RoleSelection() {
   const selectedRoleData = roles.find((role) => role.id === selectedRole);
 
   return (
-    <Card>
+    <Card className="border-gray-300 bg-white px-5 py-6">
       <CardHeader className="pb-4">
         <CardTitle className="text-lg">Select Your Role</CardTitle>
         <CardDescription>Choose your access level to continue</CardDescription>
