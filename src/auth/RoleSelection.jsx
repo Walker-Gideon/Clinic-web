@@ -47,7 +47,7 @@ export default function RoleSelection() {
   const selectedRoleData = roles.find((role) => role.id === selectedRole);
 
   return (
-    <Card styling={"border-gray-300 bg-white px-5 py-6"}>
+    <Card styling={"border-gray-300 bg-white px-5 medium:py-6 py-5"}>
       <CardHeader styling={"medium:pb-4 pb-8"}>
         <CardTitle styling={"medium:text-lg text-xl"}>
           Select Your Role

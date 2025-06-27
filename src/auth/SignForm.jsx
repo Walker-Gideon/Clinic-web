@@ -39,16 +39,16 @@ export default function SignForm() {
   };
 
   return (
-    <Card className="border-gray-300 bg-white px-5 py-6">
+    <Card styling="border-gray-300 bg-white px-5 medium:py-6 py-5">
       <CardHeader>
-        <CardTitle className="text-4xl">Sign In</CardTitle>
+        <CardTitle styling="medium:text-4xl text-2xl">Sign In</CardTitle>
         <CardDescription>
           Enter your credentials to access the system
         </CardDescription>
       </CardHeader>
 
-      <CardContent className="pt-6">
-        <Form onSubmit={handleLogin} className="space-y-6">
+      <CardContent styling="medium:pt-6 pt-8">
+        <Form onSubmit={handleLogin} className="medium:space-y-6 space-y-5">
           <div className="flex flex-col space-y-2">
             <Label forLabel="email">Email Address</Label>
             <Input
@@ -89,7 +89,7 @@ export default function SignForm() {
 
           <Button
             type="submit"
-            className="w-full rounded-sm bg-gray-950 py-1.5 text-white hover:bg-gray-900"
+            className="medium:text-base w-full rounded-sm bg-gray-950 py-1.5 text-[0.9rem] text-white hover:bg-gray-900"
             disabled={isLoading || !selectedRole}
           >
             {isLoading ? "Signing In..." : "Sign In"}
