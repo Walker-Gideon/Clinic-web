@@ -3,6 +3,12 @@ import { LuHeart } from "react-icons/lu";
 import { LuUser } from "react-icons/lu";
 import { LuSettings } from "react-icons/lu";
 import { LuStethoscope } from "react-icons/lu";
+import Card from "../components/ui/card/Card";
+import CardHeader from "../components/ui/card/CardHeader";
+import CardTitle from "../components/ui/card/CardTitle";
+import CardDescription from "../components/ui/card/CardDescription";
+import CardContent from "../components/ui/card/CardContent";
+import Badge from "../components/ui/badge/Badge";
 
 const roles = [
   {
@@ -41,20 +47,13 @@ export default function RoleSelection() {
   const selectedRoleData = roles.find((role) => role.id === selectedRole);
 
   return (
-    <div className="">
-      {/* <Card> */}
-      {/* <CardHeader className="pb-4"> */}
-      <div className="pb-4">
-        {/* <CardTitle className="text-lg">Select Your Role</CardTitle> */}
-        <h1 className="text-lg">Select Your Role</h1>
+    <Card>
+      <CardHeader className="pb-4">
+        <CardTitle className="text-lg">Select Your Role</CardTitle>
+        <CardDescription>Choose your access level to continue</CardDescription>
+      </CardHeader>
 
-        {/* <CardDescription></CardDescription> */}
-        <p>Choose your access level to continue</p>
-        {/* </CardHeader> */}
-      </div>
-
-      {/* <CardContent className="space-y-3"> */}
-      <div className="space-y-3">
+      <CardContent className="space-y-3">
         <div className="grid grid-cols-2 gap-3">
           {roles.map((role) => {
             const Icon = role.icon;
@@ -80,19 +79,17 @@ export default function RoleSelection() {
         {selectedRoleData && (
           <div className="mt-4 rounded-lg bg-gray-50 p-3">
             <div className="mb-1 flex items-center space-x-2">
-              {/* <selectedRoleData.icon className="h-4 w-4 text-gray-600" /> */}
-              <div className="h-4 w-4 text-gray-600" />
-              {/* <Badge variant="secondary" className="text-xs"></Badge> */}
-              <span className="text-xs">{selectedRoleData.label}</span>
+              <selectedRoleData.icon className="h-4 w-4 text-gray-600" />
+              <Badge variant="secondary" className="text-xs">
+                {selectedRoleData.label}
+              </Badge>
             </div>
             <p className="text-sm text-gray-600">
               {selectedRoleData.description}
             </p>
           </div>
         )}
-        {/* </CardContent> */}
-      </div>
-      {/* </Card> */}
-    </div>
+      </CardContent>
+    </Card>
   );
 }

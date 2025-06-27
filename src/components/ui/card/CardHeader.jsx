@@ -1,3 +1,3 @@
-export default function CardHeader() {
-  return <div></div>;
+export default function CardHeader({ children, className }) {
+  return <div className={className}>{children}</div>;
 }

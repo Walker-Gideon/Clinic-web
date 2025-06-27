@@ -1,3 +1,3 @@
-export default function CardDescription() {
-  return <div></div>;
+export default function CardDescription({ children, className }) {
+  return <p className={`text-sm text-gray-600 ${className}`}>{children}</p>;
 }
