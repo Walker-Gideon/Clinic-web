@@ -47,13 +47,15 @@ export default function RoleSelection() {
   const selectedRoleData = roles.find((role) => role.id === selectedRole);
 
   return (
-    <Card className="border-gray-300 bg-white px-5 py-6">
-      <CardHeader className="pb-4">
-        <CardTitle className="text-lg">Select Your Role</CardTitle>
+    <Card styling={"border-gray-300 bg-white px-5 py-6"}>
+      <CardHeader styling={"medium:pb-4 pb-8"}>
+        <CardTitle styling={"medium:text-lg text-xl"}>
+          Select Your Role
+        </CardTitle>
         <CardDescription>Choose your access level to continue</CardDescription>
       </CardHeader>
 
-      <CardContent className="space-y-3">
+      <CardContent styling={"space-y-3"}>
         <div className="grid grid-cols-2 gap-3">
           {roles.map((role) => {
             const Icon = role.icon;
@@ -68,8 +70,10 @@ export default function RoleSelection() {
                 }`}
               >
                 <div className="flex flex-col items-center space-y-2">
-                  <Icon className="h-6 w-6" />
-                  <span className="text-sm font-medium">{role.label}</span>
+                  <Icon className="medium:h-6 medium:w-6 h-5 w-5" />
+                  <span className="medium:text-sm text-[0.8rem] font-medium">
+                    {role.label}
+                  </span>
                 </div>
               </button>
             );
@@ -79,12 +83,12 @@ export default function RoleSelection() {
         {selectedRoleData && (
           <div className="mt-4 rounded-lg bg-gray-50 p-3">
             <div className="mb-1 flex items-center space-x-2">
-              <selectedRoleData.icon className="h-4 w-4 text-gray-600" />
-              <Badge variant="secondary" className="text-xs">
+              <selectedRoleData.icon className="medium:h-4 medium:w-4 h-5 w-5 text-gray-600" />
+              <Badge variant="secondary" styling={"medium:text-xs text-sm"}>
                 {selectedRoleData.label}
               </Badge>
             </div>
-            <p className="text-sm text-gray-600">
+            <p className="medium:text-sm text-[0.9rem] text-gray-600">
               {selectedRoleData.description}
             </p>
           </div>
