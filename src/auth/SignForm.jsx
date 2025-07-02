@@ -1,4 +1,4 @@
-import { Form } from "react-router-dom";
+import { Form, useNavigate } from "react-router-dom";
 import { useAuth } from "./AuthContext";
 import { LuEye } from "react-icons/lu";
 import { LuEyeOff } from "react-icons/lu";
@@ -24,6 +24,8 @@ export default function SignForm() {
     isLoading,
   } = useAuth();
 
+  const navigate = useNavigate();
+
   const handleLogin = async (e) => {
     e.preventDefault();
     setError("");
@@ -35,6 +37,10 @@ export default function SignForm() {
       setIsLoading(false);
       // In a real app, this would redirect based on role
       alert(`Login successful as ${selectedRole}`);
+      if (selectedRole === "patient") navigate("patient");
+      if (selectedRole === "nurse") navigate("nurse");
+      if (selectedRole === "doctor") navigate("doctor");
+      if (selectedRole === "admin") navigate("admin");
     }, 2000);
   };
 
