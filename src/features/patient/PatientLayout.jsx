@@ -252,19 +252,24 @@ export default function PatientLayout() {
         </div>
 
         {/* Visit History */}
-        <Card>
-          <CardHeader>
-            <CardTitle className="flex items-center gap-2">
-              <FileText className="h-5 w-5 text-gray-600" />
+        {/* Card */}
+        <div>
+          {/* CardHeader */}
+          <header>
+            {/* CardTitle */}
+            <h1 className="flex items-center gap-2">
+              {/* <FileText className="h-5 w-5 text-gray-600" /> */}
               Visit History
-            </CardTitle>
-            <CardDescription>
-              Your recent medical appointments and consultations
-            </CardDescription>
-          </CardHeader>
-          <CardContent>
+            </h1>
+
+            {/* CardDescription */}
+            <p>Your recent medical appointments and consultations</p>
+          </header>
+
+          {/* CardContent */}
+          <div>
             <div className="overflow-x-auto">
-              <Table>
+              {/* <Table>
                 <TableHeader>
                   <TableRow>
                     <TableHead className="w-[120px]">Date</TableHead>
@@ -322,15 +327,15 @@ export default function PatientLayout() {
                     </TableRow>
                   ))}
                 </TableBody>
-              </Table>
+              </Table> */}
             </div>
-          </CardContent>
-        </Card>
+          </div>
+        </div>
 
         {/* Footer */}
         <div className="py-6 text-center">
           <div className="mb-2 flex items-center justify-center gap-2 text-gray-500">
-            <Shield className="h-4 w-4" />
+            {/* <Shield className="h-4 w-4" /> */}
             <span className="text-sm">
               Your health information is protected by HIPAA
             </span>
