@@ -144,84 +144,6 @@ export default function PatientLayout() {
 
         {/* Visit History */}
         {/* Card */}
-        <div>
-          {/* CardHeader */}
-          <header>
-            {/* CardTitle */}
-            <h1 className="flex items-center gap-2">
-              {/* <FileText className="h-5 w-5 text-gray-600" /> */}
-              Visit History
-            </h1>
-
-            {/* CardDescription */}
-            <p>Your recent medical appointments and consultations</p>
-          </header>
-
-          {/* CardContent */}
-          <div>
-            <div className="overflow-x-auto">
-              {/* <Table>
-                <TableHeader>
-                  <TableRow>
-                    <TableHead className="w-[120px]">Date</TableHead>
-                    <TableHead className="w-[100px]">Time</TableHead>
-                    <TableHead>Doctor</TableHead>
-                    <TableHead>Specialty</TableHead>
-                    <TableHead>Diagnosis</TableHead>
-                    <TableHead className="w-[100px]">Status</TableHead>
-                    <TableHead className="w-[50px]">
-                      <Eye className="h-4 w-4" />
-                    </TableHead>
-                  </TableRow>
-                </TableHeader>
-                <TableBody>
-                  {patientData.visits.map((visit) => (
-                    <TableRow key={visit.id} className="hover:bg-gray-50">
-                      <TableCell className="font-medium">
-                        {visit.date}
-                      </TableCell>
-                      <TableCell className="text-gray-600">
-                        {visit.time}
-                      </TableCell>
-                      <TableCell>
-                        <div className="flex items-center gap-2">
-                          <Stethoscope className="h-4 w-4 text-blue-600" />
-                          <span className="font-medium">{visit.doctor}</span>
-                        </div>
-                      </TableCell>
-                      <TableCell>
-                        <Badge variant="outline" className="text-xs">
-                          {visit.specialty}
-                        </Badge>
-                      </TableCell>
-                      <TableCell>
-                        <div>
-                          <p className="font-medium">{visit.diagnosis}</p>
-                          <p className="mt-1 text-sm text-gray-500">
-                            {visit.notes}
-                          </p>
-                        </div>
-                      </TableCell>
-                      <TableCell>
-                        <Badge
-                          className={getStatusColor(visit.status)}
-                          variant="secondary"
-                        >
-                          {visit.status}
-                        </Badge>
-                      </TableCell>
-                      <TableCell>
-                        <button className="rounded p-1 text-blue-600 hover:text-blue-800">
-                          <Eye className="h-4 w-4" />
-                        </button>
-                      </TableCell>
-                    </TableRow>
-                  ))}
-                </TableBody>
-              </Table> */}
-            </div>
-          </div>
-        </div>
 
         <PatientMain>
           {patientData.allergies.length > 0 && (
@@ -231,7 +153,10 @@ export default function PatientLayout() {
             />
           )}
           <PatientSummary patientData={patientData} />
-          <PatientHistory />
+          <PatientHistory
+            patientData={patientData}
+            getStatusColor={getStatusColor}
+          />
         </PatientMain>
 
         <PatientFooter />
