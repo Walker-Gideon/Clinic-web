@@ -1,3 +1,7 @@
+import { LuFileText } from "react-icons/lu";
+import { LuEye } from "react-icons/lu";
+import { LuStethoscope } from "react-icons/lu";
+
 export default function PatientHistory({ patientData, getStatusColor }) {
   return (
     <div>
@@ -5,7 +9,7 @@ export default function PatientHistory({ patientData, getStatusColor }) {
       <header>
         {/* CardTitle */}
         <h1 className="flex items-center gap-2">
-          {/* <FileText className="h-5 w-5 text-gray-600" /> */}
+          <LuFileText className="h-5 w-5 text-gray-600" />
           Visit History
         </h1>
 
@@ -26,8 +30,7 @@ export default function PatientHistory({ patientData, getStatusColor }) {
                 <thead>Diagnosis</thead>
                 <thead className="w-[100px]">Status</thead>
                 <thead className="w-[50px]">
-                  {/* Eye */}
-                  <span className="h-4 w-4" />
+                  <LuEye className="h-4 w-4" />
                 </thead>
               </tr>
             </th>
@@ -39,8 +42,7 @@ export default function PatientHistory({ patientData, getStatusColor }) {
                   <td className="text-gray-600">{visit.time}</td>
                   <td>
                     <div className="flex items-center gap-2">
-                      {/* Stethoscope */}
-                      <span className="h-4 w-4 text-blue-600" />
+                      <LuStethoscope className="h-4 w-4 text-blue-600" />
                       <span className="font-medium">{visit.doctor}</span>
                     </div>
                   </td>
@@ -62,8 +64,7 @@ export default function PatientHistory({ patientData, getStatusColor }) {
                   </td>
                   <td>
                     <button className="rounded p-1 text-blue-600 hover:text-blue-800">
-                      {/* Eye */}
-                      <span className="h-4 w-4" />
+                      <LuEye className="h-4 w-4" />
                     </button>
                   </td>
                 </tr>
