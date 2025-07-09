@@ -20,7 +20,7 @@ export default function PatientHistory({ patientData, getStatusColor }) {
       {/* CardContent */}
       <div>
         <div className="overflow-x-auto">
-          <table className="w-full rounded-sm border">
+          <table className="w-full rounded-sm border text-center">
             <thead className="py-2">
               <tr className="border-b">
                 <th className="w-[120px] py-2">Date</th>
@@ -29,19 +29,19 @@ export default function PatientHistory({ patientData, getStatusColor }) {
                 <th>Specialty</th>
                 <th>Diagnosis</th>
                 <th className="w-[100px]">Status</th>
-                <th className="w-[50px]">
+                <th className="w-[50px] text-center">
                   <LuEye className="h-4 w-4" />
                 </th>
               </tr>
             </thead>
 
-            <tbody>
+            <tbody className="">
               {patientData.visits.map((visit) => (
-                <tr key={visit.id} className="hover:bg-gray-50">
+                <tr key={visit.id} className="border hover:bg-gray-50">
                   <td className="font-medium">{visit.date}</td>
                   <td className="text-gray-600">{visit.time}</td>
                   <td>
-                    <div className="flex items-center gap-2">
+                    <div className="flex items-center justify-center gap-2">
                       <LuStethoscope className="h-4 w-4 text-blue-600" />
                       <span className="font-medium">{visit.doctor}</span>
                     </div>
