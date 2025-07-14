@@ -1,10 +1,8 @@
 import Card from "../card/Card";
 
-export default function Alert({ children, variant, styling }) {
+export default function Alert({ children, variant, className }) {
   if (variant === "destructive")
-    return (
-      <Card className={`border-red-200 bg-red-50 ${styling}`}>{children}</Card>
-    );
+    return <Card className={`border ${className}`}>{children}</Card>;
 
   //   default
   return <div>{children}</div>;

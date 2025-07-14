@@ -3,7 +3,10 @@ import CardHeader from "../../../components/ui/card/CardHeader";
 
 export default function PatientAlert({ patientData, getSeverityColor }) {
   return (
-    <Alert variant="destructive" styling={`p-4 border-2 flex w-full`}>
+    <Alert
+      variant="destructive"
+      className={`flex w-full border-2 border-red-200 bg-red-50 p-4`}
+    >
       {/* icon is to be here */}
       <div className="h-5 w-5 text-red-600" />
 

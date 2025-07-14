@@ -45,15 +45,15 @@ export default function SignForm() {
   };
 
   return (
-    <Card styling="border-gray-300 bg-white px-5 medium:py-6 py-5">
+    <Card className="medium:py-6 border-gray-300 bg-white px-5 py-5 shadow-lg">
       <CardHeader>
-        <CardTitle styling="middle:text-3xl  text-2xl">Sign In</CardTitle>
-        <CardDescription>
+        <CardTitle className="middle:text-3xl text-2xl">Sign In</CardTitle>
+        <CardDescription className={`text-gray-600`}>
           Enter your credentials to access the system
         </CardDescription>
       </CardHeader>
 
-      <CardContent styling="medium:pt-6 pt-8">
+      <CardContent className="medium:pt-6 pt-8">
         <Form onSubmit={handleLogin} className="medium:space-y-6 space-y-5">
           <div className="flex flex-col space-y-2">
             <Label forLabel="email">Email Address</Label>
@@ -88,7 +88,10 @@ export default function SignForm() {
           </div>
 
           {error && (
-            <Alert variant="destructive">
+            <Alert
+              variant="destructive"
+              className={`border-red-400 bg-red-300 p-2`}
+            >
               <AlertDescription>{error}</AlertDescription>
             </Alert>
           )}
