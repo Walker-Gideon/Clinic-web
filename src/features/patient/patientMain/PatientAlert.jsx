@@ -1,10 +1,7 @@
 export default function PatientAlert({ patientData, getSeverityColor }) {
   return (
-    // Alert
-    <div className="border-2 border-red-200 bg-red-50">
-      {/* AlertTriangle */}
+    <div className="rounded-lg border-2 border-red-200 bg-red-50 p-6">
       <div className="h-5 w-5 text-red-600" />
-      {/* AlertDescription */}
       <div className="text-red-800">
         <div className="flex items-center justify-between">
           <span className="text-lg font-semibold">⚠️ CRITICAL ALLERGIES</span>

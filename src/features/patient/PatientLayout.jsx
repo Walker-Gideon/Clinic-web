@@ -135,15 +135,7 @@ export default function PatientLayout() {
   return (
     <div className="min-h-screen bg-gray-50 p-4 md:p-6">
       <div className="mx-auto max-w-7xl space-y-6">
-        {/* Header */}
         <PatientHeader patientData={patientData} />
-
-        {/* Critical Alerts - Allergies */}
-
-        {/* Patient Summary Cards */}
-
-        {/* Visit History */}
-        {/* Card */}
 
         <PatientMain>
           {patientData.allergies.length > 0 && (
