@@ -47,15 +47,19 @@ export default function RoleSelection() {
   const selectedRoleData = roles.find((role) => role.id === selectedRole);
 
   return (
-    <Card styling={"border-gray-300 bg-white px-5 medium:py-6 py-5"}>
-      <CardHeader styling={"medium:pb-4 pb-8"}>
-        <CardTitle styling={"medium:text-lg text-xl"}>
+    <Card
+      className={"medium:py-6 border-gray-300 bg-white px-5 py-5 shadow-lg"}
+    >
+      <CardHeader className={"medium:pb-4 pb-8"}>
+        <CardTitle className={"medium:text-lg text-xl text-gray-900"}>
           Select Your Role
         </CardTitle>
-        <CardDescription>Choose your access level to continue</CardDescription>
+        <CardDescription className={`text-gray-600`}>
+          Choose your access level to continue
+        </CardDescription>
       </CardHeader>
 
-      <CardContent styling={"space-y-3"}>
+      <CardContent className={"space-y-3"}>
         <div className="grid grid-cols-2 gap-3">
           {roles.map((role) => {
             const Icon = role.icon;
@@ -84,7 +88,10 @@ export default function RoleSelection() {
           <div className="mt-4 rounded-lg bg-gray-50 p-3">
             <div className="mb-1 flex items-center space-x-2">
               <selectedRoleData.icon className="medium:h-4 medium:w-4 h-5 w-5 text-gray-600" />
-              <Badge variant="secondary" styling={"medium:text-xs text-sm"}>
+              <Badge
+                variant="secondary"
+                className={"medium:text-xs bg-gray-100 text-sm"}
+              >
                 {selectedRoleData.label}
               </Badge>
             </div>

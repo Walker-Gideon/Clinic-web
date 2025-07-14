@@ -1,17 +1,21 @@
 import Alert from "../../../components/ui/alert/Alert";
+import CardHeader from "../../../components/ui/card/CardHeader";
 
 export default function PatientAlert({ patientData, getSeverityColor }) {
   return (
-    <Alert variant="destructive" styling={`p-6 border-2`}>
+    <Alert variant="destructive" styling={`p-4 border-2 flex w-full`}>
+      {/* icon is to be here */}
       <div className="h-5 w-5 text-red-600" />
-      <div className="text-red-800">
-        <div className="flex items-center justify-between">
+
+      <div className="w-full text-red-800">
+        <CardHeader className="flex items-center justify-between">
           <span className="text-lg font-semibold">⚠️ CRITICAL ALLERGIES</span>
           <p className="bg-red-600 text-white">
             {patientData.allergies.length} Active Alert
             {patientData.allergies.length > 1 ? "s" : ""}
           </p>
-        </div>
+        </CardHeader>
+
         <div className="mt-3 grid grid-cols-1 gap-3 md:grid-cols-3">
           {patientData.allergies.map((allergy, index) => (
             <div

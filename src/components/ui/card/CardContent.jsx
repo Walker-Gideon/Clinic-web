@@ -1,3 +1,3 @@
-export default function CardContent({ children, styling }) {
-  return <div className={styling}>{children}</div>;
+export default function CardContent({ children, className }) {
+  return <div className={className}>{children}</div>;
 }
