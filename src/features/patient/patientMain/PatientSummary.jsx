@@ -1,14 +1,15 @@
+import { LuUser } from "react-icons/lu";
+import Card from "../../../components/ui/card/Card";
+
 export default function PatientSummary({ patientData }) {
   return (
     <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
-      {/* Patient Information Card */}
-      {/* Card */}
-      <div className="lg:col-span-1">
+      <Card className="border-2 border-gray-300 bg-white p-6 shadow-lg lg:col-span-1">
         {/* CardHeader */}
         <header className="pb-4">
           {/* CardTitle */}
-          <h1 className="flex items-center gap-2">
-            {/*an icon <User className="h-5 w-5 text-blue-600" /> */}
+          <h1 className="middle:text-3xl flex items-center gap-2 text-2xl">
+            <LuUser className="h-5 w-5 text-blue-600" />
             Patient Information
           </h1>
         </header>
@@ -90,7 +91,7 @@ export default function PatientSummary({ patientData }) {
             </div>
           </div>
         </div>
-      </div>
+      </Card>
 
       {/* Vital Signs Card */}
       {/* Card */}

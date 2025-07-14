@@ -144,11 +144,14 @@ export default function PatientLayout() {
               getSeverityColor={getSeverityColor}
             />
           )}
-          <PatientSummary patientData={patientData} />
-          <PatientHistory
-            patientData={patientData}
-            getStatusColor={getStatusColor}
-          />
+
+          <div className="mt-8">
+            <PatientSummary patientData={patientData} />
+            <PatientHistory
+              patientData={patientData}
+              getStatusColor={getStatusColor}
+            />
+          </div>
         </PatientMain>
 
         <PatientFooter />
