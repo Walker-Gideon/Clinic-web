@@ -1,6 +1,8 @@
+import Alert from "../../../components/ui/alert/Alert";
+
 export default function PatientAlert({ patientData, getSeverityColor }) {
   return (
-    <div className="rounded-lg border-2 border-red-200 bg-red-50 p-6">
+    <Alert variant="destructive" styling={`p-6 border-2`}>
       <div className="h-5 w-5 text-red-600" />
       <div className="text-red-800">
         <div className="flex items-center justify-between">
@@ -37,6 +39,6 @@ export default function PatientAlert({ patientData, getSeverityColor }) {
           ))}
         </div>
       </div>
-    </div>
+    </Alert>
   );
 }
