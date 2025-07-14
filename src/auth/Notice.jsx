@@ -4,7 +4,7 @@ import CardContent from "../components/ui/card/CardContent";
 
 export default function Notice() {
   return (
-    <Card styling="border-yellow-200 bg-yellow-50 p-3">
+    <Card className="border-yellow-200 bg-yellow-50 p-3">
       <CardContent>
         <div className="flex items-start space-x-2">
           <LuShield className="medium:h-4 medium:w-5 smest:mt-[0.1.5px] w-7 text-yellow-600" />
