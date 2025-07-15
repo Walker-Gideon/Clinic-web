@@ -6,6 +6,7 @@ import CardTitle from "../../../components/ui/card/CardTitle";
 import CardContent from "../../../components/ui/card/CardContent";
 import Separator from "../../../components/ui/Separator";
 import SummaryHeader from "./patientSummary/SummaryHeader";
+import PatientPersonalInfo from "./patientSummary/PatientPersonalInfo";
 
 export default function PatientSummary({ patientData }) {
   return (
@@ -21,43 +22,7 @@ export default function PatientSummary({ patientData }) {
         <CardContent className="space-y-4">
           <SummaryHeader patientData={patientData} />
           <Separator />
-
-          <div className="space-y-3">
-            <div className="flex items-center gap-3">
-              {/* <Calendar className="h-4 w-4 text-gray-500" /> */}
-              <div>
-                <p className="text-sm text-gray-500">Date of Birth</p>
-                <p className="font-medium">
-                  {patientData.dateOfBirth} (Age {patientData.age})
-                </p>
-              </div>
-            </div>
-
-            <div className="flex items-center gap-3">
-              {/* <Phone className="h-4 w-4 text-gray-500" /> */}
-              <div>
-                <p className="text-sm text-gray-500">Phone</p>
-                <p className="font-medium">{patientData.phone}</p>
-              </div>
-            </div>
-
-            <div className="flex items-center gap-3">
-              {/* <Mail className="h-4 w-4 text-gray-500" /> */}
-              <div>
-                <p className="text-sm text-gray-500">Email</p>
-                <p className="font-medium">{patientData.email}</p>
-              </div>
-            </div>
-
-            <div className="flex items-start gap-3">
-              {/* <MapPin className="mt-1 h-4 w-4 text-gray-500" /> */}
-              <div>
-                <p className="text-sm text-gray-500">Address</p>
-                <p className="font-medium">{patientData.address}</p>
-              </div>
-            </div>
-          </div>
-
+          <PatientPersonalInfo patientData={patientData} />
           <Separator />
 
           <div>
