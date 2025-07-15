@@ -1,27 +1,27 @@
 import { LuUser } from "react-icons/lu";
+import { LuCircleUser } from "react-icons/lu";
 import Card from "../../../components/ui/card/Card";
+import CardHeader from "../../../components/ui/card/CardHeader";
+import CardTitle from "../../../components/ui/card/CardTitle";
+import CardContent from "../../../components/ui/card/CardContent";
 
 export default function PatientSummary({ patientData }) {
   return (
     <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
       <Card className="border-2 border-gray-300 bg-white p-6 shadow-lg lg:col-span-1">
-        {/* CardHeader */}
-        <header className="pb-4">
-          {/* CardTitle */}
-          <h1 className="middle:text-3xl flex items-center gap-2 text-2xl">
+        <CardHeader className="pb-4">
+          <CardTitle className="middle:text-3xl flex items-center gap-2 text-2xl">
             <LuUser className="h-5 w-5 text-blue-600" />
             Patient Information
-          </h1>
-        </header>
+          </CardTitle>
+        </CardHeader>
 
-        {/* CardContent */}
-        <div className="space-y-4">
+        <CardContent className="space-y-4">
           <div className="flex items-center gap-4">
-            {/* Avatar */}
-            <div className="h-16 w-16">
+            <div className="flex h-16 w-16 items-center justify-center rounded-full bg-gray-400">
               {/* <AvatarImage src="/placeholder.svg?height=64&width=64" /> */}
-              {/* AvatarFallback */}
-              <p className="bg-blue-100 text-xl font-semibold text-blue-600">
+              {/* bg-blue-100 */}
+              <p className="text-xl font-semibold text-blue-600">
                 {patientData.name
                   .split(" ")
                   .map((n) => n[0])
@@ -30,9 +30,11 @@ export default function PatientSummary({ patientData }) {
             </div>
             <div>
               <h3 className="text-xl font-bold">{patientData.name}</h3>
-              <p className="text-gray-600">MRN: {patientData.mrn}</p>
-              {/* Badge */}
-              <p variant="outline" className="mt-1">
+              <p className="text-sm text-gray-600">MRN: {patientData.mrn}</p>
+              <p
+                variant="outline"
+                className="mt-1 w-9 rounded-2xl border border-gray-200 px-2 text-sm font-semibold"
+              >
                 {patientData.bloodType}
               </p>
             </div>
@@ -90,7 +92,7 @@ export default function PatientSummary({ patientData }) {
               </p>
             </div>
           </div>
-        </div>
+        </CardContent>
       </Card>
 
       {/* Vital Signs Card */}
