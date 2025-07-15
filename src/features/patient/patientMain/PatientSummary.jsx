@@ -4,6 +4,7 @@ import Card from "../../../components/ui/card/Card";
 import CardHeader from "../../../components/ui/card/CardHeader";
 import CardTitle from "../../../components/ui/card/CardTitle";
 import CardContent from "../../../components/ui/card/CardContent";
+import Separator from "../../../components/ui/Separator";
 
 export default function PatientSummary({ patientData }) {
   return (
@@ -40,7 +41,7 @@ export default function PatientSummary({ patientData }) {
             </div>
           </div>
 
-          {/* <Separator /> */}
+          <Separator />
 
           <div className="space-y-3">
             <div className="flex items-center gap-3">
@@ -78,7 +79,7 @@ export default function PatientSummary({ patientData }) {
             </div>
           </div>
 
-          {/* <Separator /> */}
+          <Separator />
 
           <div>
             <h4 className="mb-2 font-semibold">Emergency Contact</h4>
