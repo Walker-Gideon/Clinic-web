@@ -7,6 +7,7 @@ import CardContent from "../../../components/ui/card/CardContent";
 import Separator from "../../../components/ui/Separator";
 import SummaryHeader from "./patientSummary/SummaryHeader";
 import PatientPersonalInfo from "./patientSummary/PatientPersonalInfo";
+import PatientEmeg from "./patientSummary/PatientEmeg";
 
 export default function PatientSummary({ patientData }) {
   return (
@@ -24,19 +25,7 @@ export default function PatientSummary({ patientData }) {
           <Separator />
           <PatientPersonalInfo patientData={patientData} />
           <Separator />
-
-          <div>
-            <h4 className="mb-2 font-semibold">Emergency Contact</h4>
-            <div className="rounded-lg bg-gray-50 p-3">
-              <p className="font-medium">{patientData.emergencyContact.name}</p>
-              <p className="text-sm text-gray-600">
-                {patientData.emergencyContact.relationship}
-              </p>
-              <p className="text-sm font-medium">
-                {patientData.emergencyContact.phone}
-              </p>
-            </div>
-          </div>
+          <PatientEmeg patientData={patientData} />
         </CardContent>
       </Card>
 
