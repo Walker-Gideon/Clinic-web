@@ -29,11 +29,8 @@ export default function PatientSummary({ patientData }) {
         </CardContent>
       </Card>
 
-      {/* Vital Signs Card */}
-      {/* Card */}
-      <div className="lg:col-span-2">
-        {/* CardHeader */}
-        <header>
+      <Card className="border-2 border-gray-300 bg-white p-6 shadow-lg lg:col-span-2">
+        <CardHeader className="pb-4">
           {/* CardTitle */}
           <h1 className="flex items-center gap-2">
             {/* <Activity className="h-5 w-5 text-green-600" /> */}
@@ -42,7 +39,7 @@ export default function PatientSummary({ patientData }) {
 
           {/* CardDescription */}
           <p>Last updated: {patientData.vitals.lastUpdated}</p>
-        </header>
+        </CardHeader>
 
         {/* CardContent */}
         <div>
@@ -99,7 +96,7 @@ export default function PatientSummary({ patientData }) {
             </div>
           </div>
         </div>
-      </div>
+      </Card>
     </div>
   );
 }
